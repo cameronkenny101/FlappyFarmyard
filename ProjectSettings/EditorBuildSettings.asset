@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SplashScreen/Splash.unity
+    guid: 89e8ed69c318c7640923905b17e76aab
+  - enabled: 1
+    path: Assets/Flappy Bird Style/_Scenes/Main.unity
+    guid: ab8ef5f57c6f04e42880b8b05e8278f8
+  - enabled: 1
+    path: Assets/Flappy Bird Style/_Scenes/CharacterSelection.unity
+    guid: f5bd4139b3cd6f24499f4a283a3ced82
+  - enabled: 0
+    path: Assets/Flappy Bird Style/_Scenes/Home.unity
+    guid: 174daad67462e3945b55532bf463085b
+  m_configObjects: {}
