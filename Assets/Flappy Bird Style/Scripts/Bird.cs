@@ -12,11 +12,14 @@ public class Bird : MonoBehaviour
 
     public AudioClip[] sounds;
     AudioSource thisSource;
+    Vector3 startPosition;
 
     void Start()
     {
-//        AdManager.instance.CallInterstertial();
-  //      AdManager.instance.callBanner();
+        //        AdManager.instance.CallInterstertial();
+        //      AdManager.instance.callBanner();
+
+        startPosition = transform.position;
 
         //Get reference to the Animator component attached to this GameObject.
         anim = GetComponent<Animator>();
@@ -54,8 +57,7 @@ public class Bird : MonoBehaviour
     {
         Health.health--; // lose a health point
 
-        transform.position = new Vector3(0, 0, 0); // Resets the users position after they hit a column
-
+    
         if (Health.health == 0)
         {
             transform.position = new Vector3(-100, 0, 0);
@@ -70,6 +72,11 @@ public class Bird : MonoBehaviour
             anim.SetTrigger("Die");
             //...and tell the game control about it.
             GameControl.instance.BirdDied();
+        }
+        else
+        {
+            transform.position = startPosition; // Resets the users position after they hit a column
+            GameControl.instance.SlowDownGamePlay();
         }
     }
 
