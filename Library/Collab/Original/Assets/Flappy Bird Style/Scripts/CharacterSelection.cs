@@ -9,7 +9,7 @@ public class CharacterSelection : MonoBehaviour
     private GameObject[] characterList;
     private int index;
 
-    public void Start()
+    private void Start()
     {
         index = PlayerPrefs.GetInt("CharacterSelected");
 
@@ -25,6 +25,9 @@ public class CharacterSelection : MonoBehaviour
 
         if (characterList[index])
             characterList[index].SetActive(true);
+
+        Time.timeScale = 0;
+        
     }
 
     public void ToggleLeft()
@@ -51,9 +54,6 @@ public class CharacterSelection : MonoBehaviour
 
     public void ConfirmButton()
     {
-        PlayerPrefs.SetInt("CharacterSelected", index);
+        Time.timeScale = 1;
     }
-
-
-
 }
