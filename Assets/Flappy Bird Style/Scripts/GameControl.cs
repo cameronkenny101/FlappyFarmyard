@@ -15,8 +15,8 @@ public class GameControl : MonoBehaviour
     public bool gameOver = false;               //Is the game over?
     public float scrollSpeed = -1.5f;
 
-    bool slowDown = false;
-
+    public bool slowDown = false;
+    public bool hasStarted = false;
 
     void Awake()
     {
@@ -45,7 +45,7 @@ public class GameControl : MonoBehaviour
         {
             if (Time.timeScale <= 1)
             {
-                Time.timeScale += Time.deltaTime/2;
+                Time.timeScale += Time.deltaTime/2.5f;
             }
 			else
 			{

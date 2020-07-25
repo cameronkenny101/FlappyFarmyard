@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Flappy Bird Style/_Scenes/Main.unity
     guid: ab8ef5f57c6f04e42880b8b05e8278f8
-  - enabled: 1
-    path: Assets/Flappy Bird Style/_Scenes/CharacterSelection.unity
-    guid: f5bd4139b3cd6f24499f4a283a3ced82
   - enabled: 0
-    path: Assets/Flappy Bird Style/_Scenes/Home.unity
-    guid: 174daad67462e3945b55532bf463085b
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

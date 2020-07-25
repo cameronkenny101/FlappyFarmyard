@@ -14,8 +14,12 @@ public class Bird : MonoBehaviour
     AudioSource thisSource;
     Vector3 startPosition;
 
+    bool onCooldown = false;
+
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         //        AdManager.instance.CallInterstertial();
         //      AdManager.instance.callBanner();
 
@@ -33,13 +37,13 @@ public class Bird : MonoBehaviour
     {
 
         //Don't allow control if the bird has died.
-        if (isDead == false)
+        if (isDead == false && GameControl.instance.hasStarted)
         {
             //Look for input to trigger a "flap".
             if (Input.GetMouseButtonDown(0))
             {
                 //...tell the animator about it and then...
- //               anim.SetTrigger("Flap");
+                //               anim.SetTrigger("Flap");
                 //...zero out the birds current y velocity before...
                 rb2d.velocity = Vector2.zero;
                 //	new Vector2(rb2d.velocity.x, 0);
@@ -51,19 +55,31 @@ public class Bird : MonoBehaviour
                 thisSource.Play();
             }
         }
+
+        if (GameControl.instance.slowDown)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Health.health--; // lose a health point
-
-    
-        if (Health.health == 0)
+        if (!GameControl.instance.slowDown)
         {
-            transform.position = new Vector3(-100, 0, 0);
+            Health.health--; // lose a health point
             ///Play Death sound
             thisSource.clip = sounds[1];
             thisSource.Play();
+        }
+
+        if (Health.health == 0)
+        {
+            transform.position = new Vector3(-100, 0, 0);
+
             // Zero out the bird's velocity
             rb2d.velocity = Vector2.zero;
             // If the bird collides with something set it to dead...
@@ -76,8 +92,17 @@ public class Bird : MonoBehaviour
         else
         {
             transform.position = startPosition; // Resets the users position after they hit a column
+            StartCoroutine(Opacity());
             GameControl.instance.SlowDownGamePlay();
         }
+    }
+
+    IEnumerator Opacity()
+    {
+
+
+        yield return new WaitForSeconds(1);
+
     }
 
 }

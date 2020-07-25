@@ -43,6 +43,7 @@ public class AdManager : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the banner with the request.
         bannerView.LoadAd(request);
+        callBanner();
     }
 
     private void RequestInterstitial()

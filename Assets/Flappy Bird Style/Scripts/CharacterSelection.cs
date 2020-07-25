@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     private GameObject[] characterList;
+    public Text[] charNames;
     private int index;
 
-    public void Start()
+    void Start()
     {
         index = PlayerPrefs.GetInt("CharacterSelected");
 
@@ -23,34 +24,47 @@ public class CharacterSelection : MonoBehaviour
         foreach (GameObject go in characterList)
             go.SetActive(false);
 
+        foreach (Text go in charNames)
+            go.enabled = false;
+
         if (characterList[index])
+        {
             characterList[index].SetActive(true);
+            charNames[index].enabled = true;
+        }
     }
 
     public void ToggleLeft()
     {
+        AudioManager.instance.PlayClickSound();
         characterList[index].SetActive(false);
+        charNames[index].enabled = false;
 
         index--;
         if (index < 0)
             index = characterList.Length - 1;
 
         characterList[index].SetActive(true);
+        charNames[index].enabled = true;
     }
 
     public void ToggleRight()
     {
+        AudioManager.instance.PlayClickSound();
         characterList[index].SetActive(false);
+        charNames[index].enabled = false;
 
         index++;
         if (index == characterList.Length)
             index = 0;
 
         characterList[index].SetActive(true);
+        charNames[index].enabled = true;
     }
 
     public void ConfirmButton()
     {
+        AudioManager.instance.PlayClickSound();
         PlayerPrefs.SetInt("CharacterSelected", index);
     }
 
