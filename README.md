@@ -4,7 +4,7 @@ Android app produced on request for fiverr. A flappy bird style game made with C
 
 
 # Home Screen
-<img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/homeScreen.png" alt="drawing" width="400"/>
+<img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/homeScreen.png" alt="drawing" width="200"/>
 
 
 #
