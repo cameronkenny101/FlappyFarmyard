@@ -7,4 +7,16 @@ Android app produced on request for fiverr. A flappy bird style game made with C
 <img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/homeScreen.png" alt="drawing" width="200"/>
 
 
-#
+
+# Character Selection
+<img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/characterSelect.png" alt="drawing" width="200"/>
+
+
+
+# Game Screen
+<img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/playingGame.png" alt="drawing" width="200"/>
+
+
+
+# Death Screen
+<img src="https://github.com/cameronkenny101/FlappyFarmyard/blob/master/Assets/Github/deathScreen.png" alt="drawing" width="200"/>
