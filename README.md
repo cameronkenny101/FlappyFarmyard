@@ -1,5 +1,5 @@
 # Flappy Farmyard
-Android app produced on request for fiverr. A flappy bird style game made with C# and the Unity Engine. 
+Android app produced on request for fiverr. A flappy bird style game made with C# and the Unity Engine. The game consists of four stages. The home screen where the player chooses wheter to play the game or select a new character. The character select screen is where a player chooses there sprite. Then the player plays the game, and finally there is a death screen which displays your score, your best score and gives you the option to return back to the home screen.
 
 
 
